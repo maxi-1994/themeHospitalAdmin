@@ -1,36 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
-import { PagesComponent } from './pages/pages.component';
-import { ProgressComponent } from './pages/progress/progress.component';
+import { PagesRoutingModule } from './pages/pages.routing';
+import { AuthRoutingModule } from './auth/auth.routing';
+
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: PagesComponent,
-    children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent },
-      { path: 'grafica1', component: Grafica1Component },
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    ]
-  },
+  // path: '/dashboard' PagesRoutingModule
+  // path: '/auth' AuthRoutingModule
 
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-
-  { path: '**', component: NopagefoundComponent }, // Cualquier ruta que no este definida, mostrará 404
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', component: NopagefoundComponent}, // Cualquier ruta que no este definida, mostrará 404
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
-    RouterModule.forRoot(routes) // Se especifican las rutas principales
+    RouterModule.forRoot(routes), // Se especifican las rutas principales.
+    PagesRoutingModule, // Se importa el modulo de ruteo de pages con sus rutas hijas.
+    AuthRoutingModule,
   ],
   exports: [
     RouterModule
