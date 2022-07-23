@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <h1>{{ title | titlecase }}</h1>
+    <div class="chart-container">
+      <canvas
+        baseChart
+        [data]="doughnutChartData"
+        type="doughnut">
+      </canvas>
+    </div>
+  </div>
+</div>

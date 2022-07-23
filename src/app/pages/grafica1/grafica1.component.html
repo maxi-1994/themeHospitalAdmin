@@ -1,1 +1,16 @@
-<p>grafica1 works!</p>
+<div class="row">
+  <div class="col-6">
+    <app-donut
+      title="ventas"
+      [dataConfig]="chartData"
+      >
+    </app-donut>
+  </div>
+  <div class="col-6">
+    <app-donut
+    title="Compras"
+    [dataConfig]="chartData2"
+    >
+  </app-donut>
+  </div>
+</div>
