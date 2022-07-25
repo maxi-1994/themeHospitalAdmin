@@ -13,6 +13,8 @@ export class SidibarService {
         { title: 'Main', url: '/' },
         { title: 'ProgressBar', url: 'progress' },
         { title: 'Charts', url: 'chart' },
+        { title: 'Promesas', url: 'promesas' },
+        { title: 'Rxjs', url: 'rxjs' },
       ]
     }
   ]
