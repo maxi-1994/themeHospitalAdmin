@@ -9,17 +9,21 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
+// A cada ruta se le pueden asignar parametro de ruta.
+// por medio de la propiedad "data" se especifica el parametro. En este caso title para los breadcrums.
+// Se puede asignar más de un parametro a cada ruta.
+
 const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent} ,
-      { path: 'chart', component: Grafica1Component },
-      { path: 'account-setting', component: AccountSettingComponent },
-      { path: 'promesas', component: PromesasComponent },
-      { path: 'rxjs', component: RxjsComponent },
+      { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
+      { path: 'progress', component: ProgressComponent, data: { title: 'ProgressBar' } },
+      { path: 'chart', component: Grafica1Component, data: { title: 'Chart' }  },
+      { path: 'account-setting', component: AccountSettingComponent, data: { title: 'Account Settings' }  },
+      { path: 'promesas', component: PromesasComponent, data: { title: 'Promesas' }  },
+      { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' }  },
     ]
   },
 ];
